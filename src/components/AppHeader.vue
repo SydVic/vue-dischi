@@ -12,11 +12,11 @@ export default {
 
 <style lang="scss" scoped>
 .my_header {
-  height: 80px;
+  height: 60px;
   background-color: #2e3a46;
 
   img {
-    height: 50px;
+    height: 40px;
   }
 }
 </style>
