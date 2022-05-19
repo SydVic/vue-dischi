@@ -1,17 +1,20 @@
 <template>
   <div class="my_disc-card text-center">
     <div class="my_disc-img-wrapper">
-      <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="">
+      <img :src="disc.poster" :alt="disc.title + disc.author">
     </div>
-    <h4 class="my_disc-title text-uppercase">New Jersey</h4>
-    <div class="my_disc-author pt-3">Bon Jovi</div>
-    <div class="my_disc-year pb-5">1988</div>
+    <h4 class="my_disc-title text-uppercase">{{disc.title}}</h4>
+    <div class="my_disc-author pt-3">{{disc.author}}</div>
+    <div class="my_disc-year pb-5">{{disc.year}}</div>
   </div>
 </template>
 
 <script>
 export default {
   name: "DiscCard",
+  props: {
+    disc: Object
+  }
 }
 </script>
 

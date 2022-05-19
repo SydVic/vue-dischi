@@ -2,14 +2,7 @@
   <section class="main-content">
     <div class="my_container pt-5">
       <div class="row row-cols-5">
-        <DiscCard />
-        <DiscCard />
-        <DiscCard />
-        <DiscCard />
-        <DiscCard />
-        <DiscCard />
-        <DiscCard />
-        <DiscCard />
+        <DiscCard v-for="(item, index) in discs" :key="index" :disc="item"/>
       </div>
     </div>
   </section>
