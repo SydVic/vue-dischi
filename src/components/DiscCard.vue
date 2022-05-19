@@ -1,11 +1,11 @@
 <template>
-  <div class="my_disc-card text-center">
+  <div class="my_disc-card text-center mt-4 pt-3">
     <div class="my_disc-img-wrapper">
-      <img :src="disc.poster" :alt="disc.title + disc.author">
+      <img :src="disc.poster" :alt="disc.title + ' ' + disc.author">
     </div>
-    <h4 class="my_disc-title text-uppercase">{{disc.title}}</h4>
+    <h4 class="my_disc-title text-uppercase mt-3">{{disc.title}}</h4>
     <div class="my_disc-author pt-3">{{disc.author}}</div>
-    <div class="my_disc-year pb-5">{{disc.year}}</div>
+    <div class="my_disc-year pb-2">{{disc.year}}</div>
   </div>
 </template>
 
