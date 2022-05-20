@@ -4,6 +4,7 @@
       <AppLoading />
     </div>
     <div v-else class="my_container">
+      <AppSearch />
       <div class="row row-cols-5">
         <DiscCard v-for="(item, index) in discs" :key="index" :disc="item"/>
       </div>
@@ -14,6 +15,7 @@
 <script>
 import DiscCard from "./DiscCard.vue";
 import AppLoading from "./AppLoading.vue";
+import AppSearch from "./AppSearch.vue"
 import axios from "axios";
 
 export default {
@@ -21,6 +23,7 @@ export default {
   components: {
     DiscCard,
     AppLoading,
+    AppSearch,
   },
   data: function() {
     return {
