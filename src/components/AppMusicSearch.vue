@@ -1,12 +1,13 @@
 <template>
   <div>
+    <label class="my_music-input" for="music-genres">Scegli un genere musicale</label>
     <select 
     name="music-genres" 
     id="music-genres" 
     @change="$emit('selectMusicGenre', musicGenre)"  
     v-model="musicGenre"
     >
-      <option value="all" selected>All</option>
+      <option value="all">All</option>
       <option value="rock">Rock</option>
       <option value="pop">Pop</option>
       <option value="jazz">Jazz</option>
@@ -17,7 +18,7 @@
 
 <script>
 export default {
-  name: "appSearch",
+  name: "AppMusicSearch",
   data: function() {
     return {
       musicGenre: "",
@@ -26,6 +27,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+  .my_music-input {
+    color: white;
+  }
 </style>

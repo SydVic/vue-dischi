@@ -5,7 +5,8 @@
       <AppLoading />
     </div>
     <div v-else class="my_container">
-      <AppSearch @selectMusicGenre="musicGenre($event)"/>
+      <AppMusicSearch @selectMusicGenre="musicGenre($event)"/>
+      <AppArtistSearch @selectArtist="musicArtist($event)"/>
       <div class="row row-cols-5">
         <DiscCard v-for="(item, index) in filterDiscs" :key="index" :disc="item"/>
       </div>
@@ -16,7 +17,8 @@
 <script>
 import DiscCard from "./DiscCard.vue";
 import AppLoading from "./AppLoading.vue";
-import AppSearch from "./AppSearch.vue"
+import AppMusicSearch from "./AppMusicSearch.vue";
+import AppArtistSearch from "./AppArtistSearch.vue";
 import axios from "axios";
 
 export default {
@@ -24,18 +26,23 @@ export default {
   components: {
     DiscCard,
     AppLoading,
-    AppSearch,
+    AppMusicSearch,
+    AppArtistSearch,
   },
   data: function() {
     return {
       discs: [],
       genreSelected: "all",
+      artistSelected: "all",
       loading: true
     }
   },
   methods: {
     musicGenre: function(optionSelected) {
       this.genreSelected = optionSelected;
+    },
+    musicArtist: function(optionSelected) {
+      this.artistSelected = optionSelected;
     },
   },
   computed: {
