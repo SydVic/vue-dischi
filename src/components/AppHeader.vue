@@ -1,7 +1,7 @@
 <template>
-  <div class="my_header d-flex align-items-center ps-4">
+  <header class="my_header d-flex align-items-center ps-4">
     <img src="../assets/img/logo-small.svg" alt="">
-  </div>
+  </header>
 </template>
 
 <script>
