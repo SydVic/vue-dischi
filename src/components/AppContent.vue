@@ -1,12 +1,13 @@
 <template>
-  <section class="my_main-content d-flex justify-content-center align-items-center pb-5">
+  <!-- <section class="my_main-content d-flex justify-content-center align-items-center pb-5"> -->
+  <section class="my_main-content pb-5">
     <div v-if="loading">
       <AppLoading />
     </div>
     <div v-else class="my_container">
       <AppSearch @selectMusicGenre="musicGenre($event)"/>
       <div class="row row-cols-5">
-        <DiscCard v-for="(item, index) in discs" :key="index" :disc="item"/>
+        <DiscCard v-for="(item, index) in filterDiscs" :key="index" :disc="item"/>
       </div>
     </div>
   </section>
@@ -28,13 +29,26 @@ export default {
   data: function() {
     return {
       discs: [],
-      genreSelected: "",
+      genreSelected: "all",
       loading: true
     }
   },
   methods: {
     musicGenre: function(optionSelected) {
       this.genreSelected = optionSelected;
+    },
+  },
+  computed: {
+    filterDiscs() {
+      let filteredDiscArray = [];
+      if (this.genreSelected === "all") {
+        filteredDiscArray = this.discs;
+      } else {
+        filteredDiscArray = this.discs.filter((item) => {
+          return item.genre.toLowerCase() === this.genreSelected;
+        })
+      }
+      return filteredDiscArray;
     }
   },
   created() {
