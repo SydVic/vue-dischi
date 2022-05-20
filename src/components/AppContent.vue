@@ -1,9 +1,9 @@
 <template>
-  <section class="main-content d-flex justify-content-center align-items-center">
+  <section class="my_main-content d-flex justify-content-center align-items-center pb-5">
     <div v-if="loading">
       <AppLoading />
     </div>
-    <div v-else class="my_container pt-5">
+    <div v-else class="my_container">
       <div class="row row-cols-5">
         <DiscCard v-for="(item, index) in discs" :key="index" :disc="item"/>
       </div>
@@ -39,9 +39,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../style/variables.scss";
 
-.my_container {
-  width: 70%;
-  margin: 0 auto;
+.my_main-content {
+  height: calc(100vh - $header-height);
+
+  .my_container {
+    width: 70%;
+    margin: 0 auto;
+  }
 }
 </style>
