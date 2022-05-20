@@ -4,7 +4,7 @@
       <AppLoading />
     </div>
     <div v-else class="my_container">
-      <AppSearch />
+      <AppSearch @selectMusicGenre="musicGenre($event)"/>
       <div class="row row-cols-5">
         <DiscCard v-for="(item, index) in discs" :key="index" :disc="item"/>
       </div>
@@ -28,7 +28,13 @@ export default {
   data: function() {
     return {
       discs: [],
+      genreSelected: "",
       loading: true
+    }
+  },
+  methods: {
+    musicGenre: function(optionSelected) {
+      this.genreSelected = optionSelected;
     }
   },
   created() {

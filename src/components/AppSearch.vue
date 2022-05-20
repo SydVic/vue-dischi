@@ -1,6 +1,12 @@
 <template>
   <div>
-    <select name="music-genres" id="music-genres" @change="$emit('selectMusicGenre', musicGenre)"  v-model="musicGenre">
+    <select 
+    name="music-genres" 
+    id="music-genres" 
+    @change="$emit('selectMusicGenre', musicGenre)"  
+    v-model="musicGenre"
+    >
+      <option value="all">All</option>
       <option value="rock">Rock</option>
       <option value="pop">Pop</option>
       <option value="jazz">Jazz</option>
